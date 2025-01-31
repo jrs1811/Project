@@ -144,6 +144,24 @@
         <p>Explore my projects, skills, and more. Enjoy the experience!</p>
     </div>
 </div>
+<div id="terminal">
+    <p>Welcome to my Portfolio! Type '<span style="color:#00FF41">start</span>' to begin.</p>
+    <input type="text" id="commandInput" autofocus />
+</div>
+<script>
+    document.getElementById("commandInput").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            if (this.value.toLowerCase() === "start") {
+                document.getElementById("terminal").style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+                document.getElementById("main-content").classList.add("zoomed-in");
+            } else {
+                this.value = "";
+                alert("Invalid command. Try 'start'.");
+            }
+        }
+    });
+</script>
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script>
