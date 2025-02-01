@@ -13,6 +13,7 @@ body, html {
     overflow: hidden;
 }
 
+
 /* Matrix-style background animation */
 @keyframes matrixEffect {
     0% { opacity: 0; transform: translateY(-100%); }
@@ -68,11 +69,12 @@ body, html {
 
 /* Main Content with Zoom-in Effect */
 #main-content {
-    display: none;
-    opacity: 0;
+    opacity: 1;
+    z-index:10;
     width: 100%;
     transition: opacity 1s ease, transform 1s ease;
 }
+
 #main-content.zoomed-in {
     opacity: 1;
     transform: scale(1.05);
@@ -92,6 +94,14 @@ body, html {
     display: flex;
     gap: 15px;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+   color: #00FF41;; 
+}
 .navbar-icons i {
     font-size: 24px;
     cursor: pointer;
@@ -99,7 +109,6 @@ body, html {
 }
 .navbar-icons i:hover {
     transform: scale(1.2) rotate(5deg);
-    color: #00FF41;;
 }
 
 @keyframes glitch {

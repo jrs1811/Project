@@ -1,37 +1,15 @@
-document.getElementById("commandInput").addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
-        if (this.value.toLowerCase() === "start") {
-            document.getElementById("terminal").style.display = "none";
-            document.getElementById("main-content").style.display = "block";
-            document.getElementById("main-content").classList.add("zoomed-in");
-        } else {
-            this.value = "";
-            alert("Invalid command. Try 'start'.");
-        }
-    }
-});
 
-
-    // Show console lines one by one, then reveal the main content
-const lines = document.querySelectorAll('.line');
-let delay = 6; // Delay in seconds before showing main content
-    
-setTimeout(() => {
-    document.getElementById('console').style.display = 'none';
-    const mainContent = document.getElementById('main-content');
-    mainContent.style.display = 'block';
-    mainContent.classList.add('zoomed-in');
-}, delay * 1000);
-
-
-//3
+   
+//ark mode Toggle
 document.getElementById("toggleMode").addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
 });
 
-//4
+//matrix animation
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
+
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -56,3 +34,4 @@ function draw() {
     }
 }
 setInterval(draw, 50);
+

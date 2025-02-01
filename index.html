@@ -14,18 +14,19 @@
 
 
 <!-- Matrix Background Effect -->
-<div class="matrix" style="--i:0"></div>
+<div id="matrix" class="matrix" style="--i:0"></div>
 <div class="matrix" style="--i:1"></div>
 <div class="matrix" style="--i:2"></div>
 <div class="matrix" style="--i:3"></div>
 <div class="matrix" style="--i:4"></div>
 
 <!-- Console Screen -->
-<div id="console">
-    <div id="terminal" class="line typing">
+<div id="terminal" class="line typing">
         <p>Welcome to my Portfolio! Type '<span style="color:#00FF41">start</span>' to begin.</p>
         <input type="text" id="commandInput" autofocus />
     </div>
+
+<div id="console" style="display: none">
     <div class="line typing" style="animation-delay: 0s;">Initializing System...</div>
     <div class="line typing" style="animation-delay: 1s;">Loading Modules...</div>
     <div class="line typing" style="animation-delay: 2s;">Performing Security Check...</div>
@@ -36,14 +37,14 @@
 </div>
 
 <!-- Main Content -->
-<div id="main-content">
+<div id="main-content" style="display:none">
     <div class="navbar">
         <h1 class="glitch" style="margin: 0;">My Portfolio</h1>
         <div class="navbar-icons">
-            <i title="Home" class="fas fa-home">Home</i>
-            <i title="Projects" class="fas fa-folder-open">Projects</i>
-            <i title="About" class="fas fa-user">About</i>
-            <i title="Contact" class="fas fa-envelope">Contact</i>
+            <i title="Home" class="fas fa-home"><a style="text-decoration:none;" href="index.html">Home</a></i>
+            <i title="Projects" class="fas fa-folder-open"><a href="projects.html">Projects</a></i>
+            <i title="About" class="fas fa-user"><a href="about.html">About</a></i>
+            <i title="Contact" class="fas fa-envelope"><a href="contact.html">Contact</a></i>
         </div>
     </div>
     <div style="padding: 20px;">
@@ -55,5 +56,6 @@
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="script.js"></script>
+<script src="console.js"></script>
 </body>
 </html>
