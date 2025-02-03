@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="music/music.css">
+</head>
+<body>
+
+<div class="music-container">
+    <h2>My Music Collection</h2>
+    <div class="cassette">
+        <img id="album-art" src="default.jpg" alt="Album Cover">
+        <div class="tape-reel left"></div>
+        <div class="tape-reel right"></div>
+    </div>
+
+    <div class="playlist">
+        <div class="song" data-src="music/media/mp3/AreWeStillFriends.mp3" data-img="music/media/albums/AreWeStillFriends.jpg" data-lyrics="music/media/lyrics/AreWeStillFriends.txt">🎵 Are We Still Friends - Tyler, The Creator</div>
+        <div class="song" data-src="music/media/mp3/SweetHoney.mp3" data-img="music/media/albums/SweetHoney.jpg" data-lyrics="music/media/lyrics/SweetHoney.txt">🎵 Sweet Honey - Los Retros</div>
+        <div class="song" data-src="music/media/mp3/MeGustasTu.mp3" data-img="music/media/albums/MeGustasTu.jpg" data-lyrics="music/media/lyrics/MeGustasTu.txt">🎵 Me Gustas Tu - Manu Chao</div>
+    </div>    
+
+    <audio id="audio-player" controls>
+        <source id="audio-source" src="" type="audio/mpeg">
+    </audio>
+    <canvas id="visualizer"></canvas>
+    <div id="lyrics-container"></div>
+</div>
+
+<script src="music/music.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projects Page</title>
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="dropdown/dropdown.css">
     </head>
 <body>
 <canvas id="matrixCanvas"></canvas> 
@@ -28,10 +29,20 @@
             <h2>Welcome to My Portfolio</h2>
             <p>Explore my projects, skills, and more. Enjoy the experience!</p>
         </div>
-        <button id="toggleMode">🌙</button> <!-- 3 -->
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content"> 
+                <button id="toggleMode">🌙</button> <!-- 3 -->
+                <a href="music.html">This is a music section</a>
+                <a href="#section2">Section 2</a>
+                <a href="#section3">Section 3</a>
+            </div>
+        </div>
+       
     </div>
     
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script src="dropdown/dropdown.js"></script>
 </body>
 </html>

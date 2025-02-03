@@ -73,6 +73,10 @@ body, html {
     z-index:10;
     width: 100%;
     transition: opacity 1s ease, transform 1s ease;
+    background-color: beige;
+    border:solid 1px #00FF41;
+    position: relative;
+    top:0;
 }
 
 #main-content.zoomed-in {
@@ -129,9 +133,9 @@ body.dark-mode {
     color: #00FF41;
 }
 button {
-    position: fixed;
+    /* position: fixed;
     top: 10px;
-    right: 10px;
+    right: 10px; */
     background: transparent;
     border: 2px solid #00FF41;
     color: #00FF41;
