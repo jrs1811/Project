@@ -8,12 +8,15 @@ body {
     align-items: center;      /* Centers content vertically */
     height: 100vh;            /* Makes the body take the full viewport height */
     margin: 0; 
+    overflow: hidden;
 }
 
 .music-container {
     margin-top: 50px;
     width: 400px;
     text-align: center;
+    max-height: 90vh;          /* Prevents content from overflowing */
+    overflow-y: auto;          /* Allows vertical scrolling if needed */
 }
 
 .playlist {
@@ -46,6 +49,8 @@ canvas {
     width: 100%;
     height: 100px;
     background: black;
+    border-radius: 15px;   /* Rounded edges for the visualizer */
+    border: 2px solid #00FF41; /* Optional border for better visibility */
 }
 .cassette {
     position: relative;
@@ -101,4 +106,11 @@ canvas {
     margin-top: 20px;
     font-size: 14px;
     white-space: pre-wrap;
+    padding: 15px;
+    background: rgba(0, 255, 65, 0.2);
+    border-radius: 10px;      /* Rounded edges for the lyrics container */
+    max-height: 300px;        /* Sets a maximum height for the lyrics container */
+    overflow-y: auto;         /* Makes the lyrics container scrollable */
+    border: 2px solid #00FF41; /* Optional border for better visibility */
+
 }
