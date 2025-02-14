@@ -74,3 +74,4 @@ function drawVisualizer() {
 audioPlayer.onplay = () => {
     drawVisualizer();
 };
+

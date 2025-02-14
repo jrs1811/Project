@@ -153,3 +153,21 @@ canvas {
     width: 100vw;
     height: 100vh;
 }
+section {
+    padding: 20px;
+    background: white;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.specific_tag {
+    display: contents
+}
+.clickable-link {
+    pointer-events: auto; /* Ensure the link remains clickable */
+    text-decoration: none; 
+    color: inherit;
+    font-weight: bold;
+}

@@ -1,34 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-    <link rel="stylesheet" href="music/music.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="music/music.css">
+  <link rel="stylesheet" href="features/hourglass.css">
+  <style>
+    /* Example responsive and accessible styling */
+    .search-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    #song-search {
+      padding: 10px;
+      width: 80%;
+      max-width: 500px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .playlist ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .playlist .song {
+      flex: 1 1 300px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    
+    .playlist .song:hover, .playlist .song:focus {
+      background: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
-
-<div class="music-container">
-    <h2>My Music Collection</h2>
-    <div class="cassette">
+  <div class="border-box" style="background-color: aliceblue;">
+    <div class="music-container">
+      <h2>My Music Collection</h2>
+      
+      <!-- Cassette Section -->
+      <div class="cassette">
         <img id="album-art" src="default.jpg" alt="Album Cover">
-        <div class="tape-reel left"></div>
-        <div class="tape-reel right"></div>
-    </div>
-
-    <div class="playlist">
-        <div class="song" data-src="music/media/mp3/AreWeStillFriends.mp3" data-img="music/media/albums/AreWeStillFriends.jpg" data-lyrics="music/media/lyrics/AreWeStillFriends.txt">🎵 Are We Still Friends - Tyler, The Creator</div>
-        <div class="song" data-src="music/media/mp3/SweetHoney.mp3" data-img="music/media/albums/SweetHoney.jpg" data-lyrics="music/media/lyrics/SweetHoney.txt">🎵 Sweet Honey - Los Retros</div>
-        <div class="song" data-src="music/media/mp3/MeGustasTu.mp3" data-img="music/media/albums/MeGustasTu.jpg" data-lyrics="music/media/lyrics/MeGustasTu.txt">🎵 Me Gustas Tu - Manu Chao</div>
-    </div>    
-
-    <audio id="audio-player" controls>
+        <div class="spinner">
+          <div class="spinner1"><div class="tape-reel left" style="z-index: 5;"></div></div>
+        </div>
+        <div class="spinner">
+          <div class="spinner1"><div class="tape-reel right" style="z-index: 5;"></div></div>
+        </div>
+      </div>
+      
+      <!-- Search Section -->
+      <div class="search-container">
+        <input type="text" id="song-search" placeholder="Search for songs...">
+      </div>
+      
+      <!-- Playlist Section -->
+      <div class="playlist">
+        <ul>
+          <li class="song" 
+              data-src="music/media/mp3/AreWeStillFriends.mp3" 
+              data-img="music/media/albums/AreWeStillFriends.jpg" 
+              data-lyrics="music/media/lyrics/AreWeStillFriends.txt" 
+              tabindex="0">
+            🎵 Are We Still Friends - Tyler, The Creator
+          </li>
+          <li class="song" 
+              data-src="music/media/mp3/SweetHoney.mp3" 
+              data-img="music/media/albums/SweetHoney.jpg" 
+              data-lyrics="music/media/lyrics/SweetHoney.txt" 
+              tabindex="0">
+            🎵 Sweet Honey - Los Retros
+          </li>
+          <li class="song" 
+              data-src="music/media/mp3/MeGustasTu.mp3" 
+              data-img="music/media/albums/MeGustasTu.jpg" 
+              data-lyrics="music/media/lyrics/MeGustasTu.txt" 
+              tabindex="0">
+            🎵 Me Gustas Tu - Manu Chao
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Audio Player, Visualizer, and Lyrics -->
+      <audio id="audio-player" controls>
         <source id="audio-source" src="" type="audio/mpeg">
-    </audio>
-    <canvas id="visualizer"></canvas>
-    <div id="lyrics-container"></div>
-</div>
+      </audio>
+      <canvas id="visualizer"></canvas>
+      <div id="lyrics-container"></div>
+    </div>
+    
+    <!-- Hourglass Feature (Existing) -->
+    <div class="absolute" style="position:absolute; left: 0; bottom: 0;">
+      <div class="hourglassBackground">
+        <div class="hourglassContainer">
+          <div class="hourglassCurves"></div>
+          <div class="hourglassCapTop"></div>
+          <div class="hourglassGlassTop"></div>
+          <div class="hourglassSand"></div>
+          <div class="hourglassSandStream"></div>
+          <div class="hourglassCapBottom"></div>
+          <div class="hourglassGlass"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="music/music.js"></script>
+  <script>
+    // Search functionality
+    const searchInput = document.getElementById('song-search');
+    const songs = document.querySelectorAll('.song');
 
-<script src="music/music.js"></script>
+    searchInput.addEventListener('input', function(e) {
+      const searchTerm = e.target.value.toLowerCase();
+      songs.forEach(song => {
+        const songText = song.textContent.toLowerCase();
+        song.style.display = songText.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
